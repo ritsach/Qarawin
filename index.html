@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QARAWIN</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/pangrampangram/neue-montreal/webfonts/neue-montreal.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Neue Montreal', sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      margin: 0 15px;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f3f3f3;
+      color: #ca0013;
+    }
+
+    #landing {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 5rem;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ca0013;
+      background-color: #fff;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #ca0013;
+    }
+
+    .grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 2rem;
+    }
+
+    .card {
+      min-width: 240px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .join-button {
+      display: inline-block;
+      margin-top: 40px;
+      background-color: #ca0013;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #111;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#advisors">Advisors</a>
+  <a href="#founders">Founders</a>
+  <a href="#chapters">Chapters</a>
+  <a href="#join">Join Us</a>
+</nav>
+
+<div id="landing">QARAWIN</div>
+
+<section id="about">
+  <h2>Our Purpose</h2>
+  <p>Qarawin is a scientific deeptech society gathering Moroccan researchers, technologists, and students around the world.</p>
+</section>
+
+<section id="advisors">
+  <h2>Advisors</h2>
+  <div class="grid">
+    <div class="card"><img src="advisors/rachid_yazami.jpg" alt="Rachid Yazami"><h3>Rachid Yazami</h3><p>Co-inventor of the lithium-ion battery</p></div>
+    <div class="card"><img src="advisors/amine_khalil.jpg" alt="Amine Khalil"><h3>Amine Khalil</h3><p>Chief Scientist, Argonne National Laboratory</p></div>
+    <div class="card"><img src="advisors/jinane_abounadi.png" alt="Jinane Abounadi"><h3>Jinane Abounadi</h3><p>Executive Director, MIT Sandbox</p></div>
+  </div>
+</section>
+
+<section id="founders">
+  <h2>Founders</h2>
+  <div class="grid">
+    <div class="card"><img src="founders/sofia_dahoune.jpg" alt="Sofia Dahoune"><h3>Sofia Dahoune</h3><p>ENS Professor</p></div>
+    <div class="card"><img src="founders/amine_raji.jpg" alt="Amine Raji"><h3>Amine Raji</h3><p>Spore.Bio CEO</p></div>
+    <div class="card"><img src="founders/yassine_laghzioui.jpg" alt="Yassine Laghzioui"><h3>Yassine Laghzioui</h3><p>UM6P Ventures</p></div>
+    <div class="card"><img src="founders/mehdi_ghissassi.jpg" alt="Mehdi Ghissassi"><h3>Mehdi Ghissassi</h3><p>AI71 CPO</p></div>
+    <div class="card"><img src="founders/mahmoud_mikdar.jpeg" alt="Mahmoud Mikdar"><h3>Mahmoud Mikdar</h3><p>Harvard Medical School</p></div>
+  </div>
+</section>
+
+<section id="chapters">
+  <h2>Chapters</h2>
+  <div class="grid">
+    <div class="card"><img src="chapters/rita_achour.jpg" alt="Rita Achour"><h3>Rita Achour</h3><p>US Chapter</p></div>
+    <div class="card"><img src="chapters/ines_iraki.jpg" alt="Ines Iraki"><h3>Ines Iraki</h3><p>France Chapter</p></div>
+  </div>
+</section>
+
+<section id="join" style="text-align: center;">
+  <h2>Join Us</h2>
+  <p>Become part of the Qarawin community — connect with scientists and innovators across the globe.</p>
+  <a href="#" class="join-button">Join Us</a>
+</section>
+
+<footer>&copy; 2025 Qarawin. All rights reserved.</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
