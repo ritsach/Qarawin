@@ -1,0 +1,448 @@
+/* Load Inter font for hero title + subtitle */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700,900&display=swap'); /* Added 900 for bold Inter */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Neue Montreal', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ensure anchor jumps account for fixed navbar */
+html {
+    scroll-padding-top: 50px; /* Adjust for the smaller navbar */
+  }
+/* Global AOS fallback (optional, improves fade consistency) */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* Hero Section Styling */
+body {
+    background-color: #f0f0f0; /* Set the solid background color */
+    opacity: 1 !important; /* Ensure body is visible */
+  }
+
+  #hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    opacity: 1 !important;
+  }
+  
+  #hero::before,
+  #hero::after {
+    content: "";
+    position: absolute;
+    width: 400px; /* Reduced size */
+    height: 400px; /* Reduced size */
+    border-radius: 50%;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    filter: blur(40px);
+    top: 50%;
+    left: 50%; /* Initial centering */
+    transform: translate(-50%, -50%); /* Adjust for true center */
+  }
+  
+  #hero::before {
+    /* Center more opaque, fades out, more transparent overall */
+    background: radial-gradient(circle, rgba(202, 0, 19, 0.5) 0%, rgba(202, 0, 19, 0.2) 70%, rgba(202, 0, 19, 0) 100%);
+    animation: trueOrbitRed 18s infinite linear; /* New animation name */
+  }
+  
+  #hero::after {
+    /* Center more opaque, fades out, more transparent overall */
+    background: radial-gradient(circle, rgba(234, 218, 172, 0.5) 0%, rgba(234, 218, 172, 0.2) 70%, rgba(234, 218, 172, 0) 100%);
+    animation: trueOrbitYellow 19.8s infinite linear; /* New animation name */
+  }
+  
+  /* True Orbit Animation */
+  @keyframes trueOrbitRed {
+    0% {
+      transform: translate(-50%, -50%) translateX(-150px) translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translate(-50%, -50%) translateX(0) translateY(-100px) rotate(90deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) translateX(150px) translateY(0) rotate(180deg);
+    }
+    75% {
+      transform: translate(-50%, -50%) translateX(0) translateY(100px) rotate(270deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(-150px) translateY(0) rotate(360deg);
+    }
+  }
+  
+  @keyframes trueOrbitYellow {
+    0% {
+      transform: translate(-50%, -50%) translateX(180px) translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translate(-50%, -50%) translateX(0) translateY(120px) rotate(-90deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) translateX(-180px) translateY(0) rotate(-180deg);
+    }
+    75% {
+      transform: translate(-50%, -50%) translateX(0) translateY(-120px) rotate(-270deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(180px) translateY(0) rotate(-360deg);
+    }
+  }
+/* Hero Title */
+.hero-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #ca0013;
+  text-align: center;
+  line-height: 1;
+  font-size: 8rem; /* Adjusted size */
+  opacity: 1 !important; /* Ensured opacity is 1 */
+  animation: fadeIn 2s forwards 0.5s;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ca0013;
+  opacity: 1 !important; /* Ensured opacity is 1 */
+  animation: fadeIn 2s forwards 1s;
+}
+
+/* ... your existing CSS ... */
+
+#purpose {
+    padding-top: 90px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  
+  #purpose h2 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 3rem;
+    color: #ca0013;
+    margin-bottom: 1rem;
+  }
+  
+  #purpose p {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 1.2rem;
+    color: #black;
+    margin-bottom: 3rem;
+  }
+  
+  #purpose .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    #purpose .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  #purpose .grid > div.bg-white-shade {
+    background-color: #f0f0f0; /* Match website background */
+    opacity: 0.9; /* Add a slight shade for visibility */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  #purpose .grid > div .text-3xl svg {
+    /* Existing styles */
+    width: auto; /* Adjust as needed */
+    height: 3rem; /* Adjust as needed */
+    color: #ca0013;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #purpose .grid > div h3 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000; /* Black text */
+    margin-bottom: 0.5rem;
+  }
+  
+  #purpose .grid > div p {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 1rem;
+    color: #000; /* Black text */
+    line-height: 1.5;
+  }
+  
+  /* ... any other purpose page specific styles ... */
+
+/* Style the section subtitles */
+#purpose h2,
+#advisors h2,
+#founders h2,
+#chapters h2,
+#join h2 {
+  font-family: 'Neue Montreal', sans-serif;
+  font-size: 50px; /* Adjusted size */
+  color: #ca0013;
+  text-align: center; /* Center the titles */
+  margin-top: 30px; /* Add some top margin */
+  margin-bottom: 40px; /* Add some bottom margin */
+  opacity: 1 !important; /* Ensure they are visible */
+  visibility: visible !important; /* Ensure they are visible */
+  position: relative; /* Changed to relative for simpler centering */
+}
+
+
+x/* Style the section containers to center content */
+#advisors .flex,
+#founders .flex,
+#chapters .flex {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  padding: 20px; /* Add some padding around the content */
+}
+
+/* Style the image containers (removing the card background) */
+#advisors .min-w-\[200px\],
+#founders .min-w-\[200px\],
+#chapters .min-w-\[200px\] {
+  width: calc(20% - 40px); /* Adjust width for desired number of items per row and spacing */
+  margin: 20px;
+  text-align: center; /* Center text below the image */
+  background-color: transparent; /* Remove any background color */
+}
+
+/* Style the images to be round and centered */
+#advisors .min-w-\[200px\] img,
+#founders .min-w-\[200px\] img,
+#chapters .min-w-\[200px\] img {
+  width: 150px; /* Adjust image size */
+  height: 150px; /* Ensure a circle */
+  border-radius: 50%; /* Create the round frame */
+  object-fit: cover; /* Ensure the image fills the circle without distortion */
+  margin-bottom: 10px; /* Space between image and text */
+  display: block; /* Make image a block-level element for margin auto */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+/* Style the names to be on one line */
+#advisors .min-w-\[200px\] h3.font-bold,
+#founders .min-w-\[200px\] h3.font-bold,
+#chapters .min-w-\[200px\] h3.font-bold {
+  font-size: 20px; /* Adjust name size */
+  color: #ca0013;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;      /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+}
+
+/* Style the titles to be on one line */
+#advisors .min-w-\[200px\] p.text-sm,
+#founders .min-w-\[200px\] p.text-sm,
+#chapters .min-w-\[200px\] p.text-sm {
+  font-size: 16px; /* Adjust title size */
+  color: #333;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;      /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+}
+
+/* Responsive adjustments for the number of items per row */
+@media (max-width: 1200px) {
+  #advisors .min-w-\[200px\],
+  #founders .min-w-\[200px\],
+  #chapters .min-w-\[200px\] {
+    width: calc(33.33% - 40px); /* Adjust for 3 items on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #advisors .min-w-\[200px\],
+  #founders .min-w-\[200px\],
+  #chapters .min-w-\[200px\] {
+    width: calc(50% - 40px); /* Adjust for 2 items on smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  #advisors .min-w-\[200px\],
+  #founders .min-w-\[200px\],
+  #chapters .min-w-\[200px\] {
+    width: calc(100% - 40px); /* Adjust for 1 item on very small screens */
+  }
+}
+/* Style the navigation bar */
+nav.fixed {
+    background-color: #f0f0f0; /* Or your desired background */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Already present */
+    top: 0;        /* Likely intended to be at the top */
+    left: 0;       /* To span the width */
+    right: 0;      /* To span the width */
+    z-index: 50;    /* Already present, and a reasonably high value */
+  
+}
+  
+  nav.fixed .nav-links {
+    display: flex;
+    align-items: center;
+    /* Add left padding to create space for Qarawin */
+    padding-left: 150px; /* Adjust this value as needed */
+  }
+  
+  nav.fixed .nav-links a {
+    font-family: 'Neue Montreal', sans-serif;
+    font-weight: bold;
+    color: #ca0013;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    margin: 0 65px; /* Increased horizontal margin */
+  }
+  
+  /* Hero Title in Navbar */
+  .hero-title-nav {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #ca0013;
+    font-size: 16px; /* Increased size */
+    text-decoration: none;
+    pointer-events: none; /* Make it non-interactive */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Join Us Button */
+  .join-us-button {
+    font-family: 'Neue Montreal', sans-serif;
+    font-weight: bold;
+    color: #ca0013;
+    font-size: 16px; /* Adjust to match other titles or your preference */
+    text-decoration: none;
+    letter-spacing: 0;
+    border: 1px solid #ca0013;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .join-us-button:hover {
+    background-color: #ca0013;
+    color: #eadaac;
+  }
+/* Adjust padding for the sections */
+#hero,
+#purpose,
+#advisors,
+#founders,
+#chapters,
+#join {
+  scroll-margin-top: 70px; /* Adjust this value to match your navbar's height + spacing */
+  padding-bottom: 30px; /* Keep your existing bottom padding */
+  opacity: 1 !important; /* Ensure sections are visible */
+  text-align: center; /* Center overall section content */
+}
+
+/* Center the Join Us section content */
+#join .text-center > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fix section headers hidden behind navbar - Ensure opacity is 1 */
+#purpose h3,
+#purpose h2,
+#advisors h2,
+#founders h2,
+#chapters h2,
+#join h2 {
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 40px; /* Keep section title size */
+  font-family: 'Neue Montreal', sans-serif; /* Keep section title font */
+  letter-spacing: 2px; /* Keep section title letter spacing */
+}
+
+/* Scroll background movement animation */
+@keyframes subtleBackgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Glowing orbits around hero */
+@keyframes orbitToCenterRed {
+  0% {
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(70px) translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0px) translateY(-50%) scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+@keyframes orbitToCenterYellow {
+  0% {
+    transform: translateX(50%) translateY(-50%) scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(-70px) translateY(-50%) scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0px) translateY(-50%) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Fade-in used in hero section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
