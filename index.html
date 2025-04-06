@@ -4,167 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QARAWIN</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/pangrampangram/neue-montreal/webfonts/neue-montreal.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
   <style>
-    html { scroll-behavior: smooth; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
     body {
-      margin: 0;
       font-family: 'Neue Montreal', sans-serif;
-      background: #ffffff;
-      color: #111;
     }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: #ffffff;
-      z-index: 1000;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #111;
-      font-weight: bold;
-      margin: 0 15px;
-      padding: 10px 15px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #f3f3f3;
-      color: #ca0013;
-    }
-
-    #landing {
+    .font-inter {
       font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 5rem;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ca0013;
-      background-color: #fff;
-    }
-
-    section {
-      padding: 80px 10%;
-    }
-
-    h2 {
-      text-transform: uppercase;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #ca0013;
-    }
-
-    .grid {
-      display: flex;
-      overflow-x: auto;
-      gap: 2rem;
-    }
-
-    .card {
-      min-width: 240px;
-      background: #f5f5f5;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .join-button {
-      display: inline-block;
-      margin-top: 40px;
-      background-color: #ca0013;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #111;
-      color: white;
     }
   </style>
 </head>
-<body>
+<body class="bg-white text-gray-900 scroll-smooth">
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#advisors">Advisors</a>
-  <a href="#founders">Founders</a>
-  <a href="#chapters">Chapters</a>
-  <a href="#join">Join Us</a>
+<!-- Sticky Navbar -->
+<nav class="fixed w-full top-0 z-50 bg-white border-b shadow-sm">
+  <div class="flex justify-center space-x-6 py-3 text-sm font-bold">
+    <a href="#about" class="hover:text-red-600">About</a>
+    <a href="#advisors" class="hover:text-red-600">Advisors</a>
+    <a href="#founders" class="hover:text-red-600">Founders</a>
+    <a href="#chapters" class="hover:text-red-600">Chapters</a>
+    <a href="#join" class="hover:text-red-600">Join Us</a>
+  </div>
 </nav>
 
-<div id="landing">QARAWIN</div>
-
-<section id="about">
-  <h2>Our Purpose</h2>
-  <p>Qarawin is a scientific deeptech society gathering Moroccan researchers, technologists, and students around the world.</p>
+<!-- Hero -->
+<section id="hero" class="h-screen flex items-center justify-center bg-white font-inter text-6xl text-[#ca0013] font-bold">
+  QARAWIN
 </section>
 
-<section id="advisors">
-  <h2>Advisors</h2>
-  <div class="grid">
-    <div class="card"><img src="advisors/rachid_yazami.jpg" alt="Rachid Yazami"><h3>Rachid Yazami</h3><p>Co-inventor of the lithium-ion battery</p></div>
-    <div class="card"><img src="advisors/amine_khalil.jpg" alt="Amine Khalil"><h3>Amine Khalil</h3><p>Chief Scientist, Argonne National Laboratory</p></div>
-    <div class="card"><img src="advisors/jinane_abounadi.png" alt="Jinane Abounadi"><h3>Jinane Abounadi</h3><p>Executive Director, MIT Sandbox</p></div>
+<!-- About -->
+<section id="about" class="py-20 px-6 md:px-16" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-[#ca0013] mb-6">Our Purpose</h2>
+  <p class="max-w-3xl text-lg">
+    Qarawin is a scientific deeptech society gathering Moroccan researchers, technologists, and students around the world. 
+    Our mission is to unite the Moroccan STEM community, promote cross-border collaboration, and elevate the next generation of innovators.
+  </p>
+</section>
+
+<!-- Advisors -->
+<section id="advisors" class="py-20 px-6 md:px-16 bg-gray-50" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-[#ca0013] mb-6">Advisors</h2>
+  <div class="flex space-x-6 overflow-x-auto pb-4">
+    <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+      <img src="images/advisor1.jpg" alt="Advisor 1" class="rounded mb-2 w-full h-40 object-cover">
+      <h3 class="font-bold">Rachid Yazami</h3>
+      <p class="text-sm">Lithium-ion battery co-inventor</p>
+    </div>
+    <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+      <img src="images/advisor2.jpg" alt="Advisor 2" class="rounded mb-2 w-full h-40 object-cover">
+      <h3 class="font-bold">Amine Khalil</h3>
+      <p class="text-sm">Chief Scientist, Argonne Lab</p>
+    </div>
   </div>
 </section>
 
-<section id="founders">
-  <h2>Founders</h2>
-  <div class="grid">
-    <div class="card"><img src="founders/sofia_dahoune.jpg" alt="Sofia Dahoune"><h3>Sofia Dahoune</h3><p>ENS Professor</p></div>
-    <div class="card"><img src="founders/amine_raji.jpg" alt="Amine Raji"><h3>Amine Raji</h3><p>Spore.Bio CEO</p></div>
-    <div class="card"><img src="founders/yassine_laghzioui.jpg" alt="Yassine Laghzioui"><h3>Yassine Laghzioui</h3><p>UM6P Ventures</p></div>
-    <div class="card"><img src="founders/mehdi_ghissassi.jpg" alt="Mehdi Ghissassi"><h3>Mehdi Ghissassi</h3><p>AI71 CPO</p></div>
-    <div class="card"><img src="founders/mahmoud_mikdar.jpeg" alt="Mahmoud Mikdar"><h3>Mahmoud Mikdar</h3><p>Harvard Medical School</p></div>
+<!-- Founders -->
+<section id="founders" class="py-20 px-6 md:px-16" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-[#ca0013] mb-6">Founders</h2>
+  <div class="flex space-x-6 overflow-x-auto pb-4">
+    <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+      <img src="images/founder1.jpg" alt="Founder 1" class="rounded mb-2 w-full h-40 object-cover">
+      <h3 class="font-bold">Sofia Dahoune</h3>
+      <p class="text-sm">ENS Professor</p>
+    </div>
+    <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+      <img src="images/founder2.jpg" alt="Founder 2" class="rounded mb-2 w-full h-40 object-cover">
+      <h3 class="font-bold">Amine Raji</h3>
+      <p class="text-sm">CEO, Spore.Bio</p>
+    </div>
   </div>
 </section>
 
-<section id="chapters">
-  <h2>Chapters</h2>
-  <div class="grid">
-    <div class="card"><img src="chapters/rita_achour.jpg" alt="Rita Achour"><h3>Rita Achour</h3><p>US Chapter</p></div>
-    <div class="card"><img src="chapters/ines_iraki.jpg" alt="Ines Iraki"><h3>Ines Iraki</h3><p>France Chapter</p></div>
+<!-- Chapters -->
+<section id="chapters" class="py-20 px-6 md:px-16 bg-gray-50" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-[#ca0013] mb-6">Chapters</h2>
+  <div class="flex space-x-6 overflow-x-auto pb-4">
+    <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+      <img src="images/chapter1.jpg" alt="Chapter 1" class="rounded mb-2 w-full h-40 object-cover">
+      <h3 class="font-bold">Rita Achour</h3>
+      <p class="text-sm">US Chapter</p>
+    </div>
+    <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+      <img src="images/chapter2.jpg" alt="Chapter 2" class="rounded mb-2 w-full h-40 object-cover">
+      <h3 class="font-bold">Ines Iraki</h3>
+      <p class="text-sm">France Chapter</p>
+    </div>
   </div>
 </section>
 
-<section id="join" style="text-align: center;">
-  <h2>Join Us</h2>
-  <p>Become part of the Qarawin community — connect with scientists and innovators across the globe.</p>
-  <a href="#" class="join-button">Join Us</a>
+<!-- Join Us -->
+<section id="join" class="py-20 px-6 md:px-16 text-center" data-aos="zoom-in">
+  <h2 class="text-3xl font-bold text-[#ca0013] mb-4">Join Us</h2>
+  <p class="mb-6">Become part of the Qarawin community — connect with scientists and innovators across the globe.</p>
+  <a href="#" class="inline-block bg-[#ca0013] text-white font-bold py-3 px-8 rounded shadow hover:bg-red-700 transition">Join Us</a>
 </section>
 
-<footer>&copy; 2025 Qarawin. All rights reserved.</footer>
+<!-- Footer -->
+<footer class="py-12 text-center text-sm bg-white border-t text-gray-500">
+  &copy; 2025 Qarawin. All rights reserved.
+</footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000 });</script>
+<script>
+  AOS.init({ duration: 1000 });
+</script>
+
 </body>
 </html>
